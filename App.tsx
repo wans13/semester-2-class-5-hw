@@ -84,7 +84,9 @@ function App() {
     if (checkWinner(copy, "o") == true) {
       copy.winner = "Player 2";
     }
-    checkWinner(copy, "o");
+    if (copy.turn == 10 && copy.winner == undefined) {
+      copy.winner = "Nobody";
+    }
     setBoard(copy);
   }
   function restartGame() {
